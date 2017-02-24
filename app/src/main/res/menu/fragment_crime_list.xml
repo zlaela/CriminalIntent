@@ -8,5 +8,9 @@
         android:title="@string/new_crime"
         app:showAsAction="withText|ifRoom"
         />
+    <item
+        android:id="@+id/show_subtitle"
+        android:title="@string/show_subtitle"
+        app:showAsAction="ifRoom" />
 
 </menu>
