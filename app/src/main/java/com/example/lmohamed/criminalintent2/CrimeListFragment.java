@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -21,6 +24,13 @@ import java.util.List;
 public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
+
+    /** explicitly tell FragmentManager that the Fragment should receive a call to onCreateOptionsMenu **/
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +52,20 @@ public class CrimeListFragment extends Fragment {
     public void onResume(){
         super.onResume();
         updateUI();
+    }
+
+    /** menu **/
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {    // Method
+        super.onCreateOptionsMenu(menu, inflater);              // calls the inflater and pass the resource ID of the layout file
+        inflater.inflate(R.menu.fragment_crime_list, menu);     // populates the menu instance with the items defined in the layout
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        super.onOptionsItemSelected(item);
+        // do something
+        return false;
     }
 
     /** Implement the method updateUI that sets up CrimeListFragment's UI **/
