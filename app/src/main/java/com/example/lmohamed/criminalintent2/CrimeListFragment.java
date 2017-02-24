@@ -61,11 +61,21 @@ public class CrimeListFragment extends Fragment {
         inflater.inflate(R.menu.fragment_crime_list, menu);     // populates the menu instance with the items defined in the layout
     }
 
+    /** receives an instance of MenuItem that describes the user's selection **/
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         super.onOptionsItemSelected(item);
-        // do something
-        return false;
+        switch (item.getItemId()) {                                 // check the ID of the selection tapped
+            case R.id.new_crime:
+                Crime crime = new Crime();                          // create a new crime
+                CrimeLab.get(getActivity()).addCrime(crime);        // Return the FragmentActivity this fragment is currently associated with, add Crime
+                Intent intent = CrimePagerActivity
+                        .newIntent(getActivity(), crime.getId());
+                startActivity(intent); // Call Activity.startActivity(Intent) from the fragment's containing Activity
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /** Implement the method updateUI that sets up CrimeListFragment's UI **/

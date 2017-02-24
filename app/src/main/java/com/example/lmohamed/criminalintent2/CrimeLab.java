@@ -29,15 +29,11 @@ public class CrimeLab {
 
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
-        for (int i = 0; i < 100; i++){
-            Crime crime = new Crime();
-            crime.setTitle("Crime #" + i);
-            crime.setSolved(i %2 ==0);
-            if (i % 2 ==0){
-                crime.setType(1);
-            }
-            mCrimes.add(crime);
-        }
+    }
+
+    /** Add a new Crime to the list of Crimes when user presses '+' in action bar **/
+    public void addCrime(Crime crime){
+        mCrimes.add(crime);
     }
 
     public List<Crime> getCrimes() {
