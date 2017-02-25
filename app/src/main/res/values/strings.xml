@@ -11,13 +11,15 @@
     <string name="crime_suspect_text">Select Suspect</string>
     <string name="crime_report_text">Send Crime Report</string>
 
-    <string name="crime_report">%1$s! The crime was discovered on %2$s. %3$s, and %4$s</string>
+    <string name="crime_report">%1$s \nThe crime was discovered on %2$s. %3$s, and %4$s</string>
     <string name="crime_report_solved">The case is solved</string>
     <string name="crime_report_unsolved">The case is not solved</string>
-    <string name="crime_report_suspect">The suspect is %s</string>
-    <string name="crime_report_no_suspect">There is no suspect at this time.</string>
+    <string name="crime_report_suspect">the suspect is %s</string>
+    <string name="crime_report_no_suspect">there is no suspect at this time.</string>
     <string name="crime_report_subject">CriminalIntent Crime Report - Heinous act</string>
     <string name="send_report">Send crime report via</string>
+
+    <string name="no_contacts_found">No contacts app found</string>
 
 
     <!-- Menu Strings -->
