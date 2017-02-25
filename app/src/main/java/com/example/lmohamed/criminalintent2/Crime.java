@@ -14,12 +14,17 @@ public class Crime {
     private Date mDate;
     private boolean mSolved;
 
+    private String mSuspect;
+
     private int mType;
 
-    public Crime(){
-        mId = UUID.randomUUID();
-        mDate = new Date();
+    public Crime() {
+        this(UUID.randomUUID());
+    }
 
+    public Crime(UUID id) {
+        mId = id;
+        mDate = new Date();
     }
 
     public UUID getId() {
@@ -50,12 +55,19 @@ public class Crime {
         mSolved = solved;
     }
 
-
     public int getType() {
         return mType;
     }
 
     public void setType(int type) {
         mType = type;
+    }
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
     }
 }
